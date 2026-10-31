@@ -6,6 +6,9 @@
 /* Stats bar with entrance animation */
 .media-grid-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:28px 0}.media-stat{background:#f5f7f4;border:1px solid var(--line);border-radius:6px;padding:18px;text-align:center;opacity:0;transform:translateY(16px);animation:stat-enter .5s ease forwards}.media-stat:nth-child(1){animation-delay:.05s}.media-stat:nth-child(2){animation-delay:.12s}.media-stat:nth-child(3){animation-delay:.19s}.media-stat:nth-child(4){animation-delay:.26s}@keyframes stat-enter{to{opacity:1;transform:translateY(0)}}.media-stat strong{display:block;font-family:'Manrope';font-size:26px;font-weight:500;letter-spacing:-1px;margin-bottom:4px}.media-stat span{font-size:9px;letter-spacing:1.2px;color:#77868d;text-transform:uppercase}
 
+/* Filter bar */
+.media-filter{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px}
+
 /* Sections with scroll entrance */
 .media-section{margin:48px 0;opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.media-section.visible{opacity:1;transform:translateY(0)}.media-section-head{margin-bottom:24px}.media-section-head h2{font-size:26px;margin:8px 0 0;letter-spacing:-.8px}.media-section-head p{font-size:12px;color:#77828a;margin:6px 0 0}
 
