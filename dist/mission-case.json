@@ -1,0 +1,583 @@
+{
+  "name": "ATLAS / One orbit, six decisions",
+  "disclosure": "Entire mission, thresholds and resource changes are authored training assumptions. They are not spacecraft engineering values, real telemetry, collision probabilities, flight approval or regulatory permission.",
+  "premise": "An 84-spacecraft constellation is evaluating a planning release. You direct one eligible spacecraft through a 96-minute training orbit. The planning release may advise or run in shadow only. Existing human-command procedures remain in force. ATLAS-17 is excluded for stale telemetry, and ATLAS-42 for an unresolved thermal anomaly.",
+  "time": {
+    "orbitMinutes": 96,
+    "stageTimes": [
+      0,
+      14,
+      32,
+      50,
+      70,
+      84
+    ],
+    "eclipse": [
+      32,
+      62
+    ],
+    "sunAssumption": "Fixed distant Sun; no seasonal or orbital perturbation model.",
+    "finalMinute": 96
+  },
+  "initial": {
+    "battery": 82,
+    "thermalMargin": 18,
+    "deltaV": 24,
+    "operatorMinutes": 60,
+    "evidenceCoverage": 20,
+    "dataValue": 0,
+    "telemetryFresh": true,
+    "groundContact": true,
+    "authority": "advisory",
+    "scope": 1,
+    "evidence": [
+      "E0",
+      "E1"
+    ],
+    "flags": []
+  },
+  "resourceDefinitions": {
+    "battery": "Illustrative usable battery percentage; 0\u2013100, not a battery model.",
+    "thermalMargin": "Illustrative degrees Celsius below a case-specific limit; not actual component temperatures.",
+    "deltaV": "Illustrative remaining manoeuvre budget in m/s; not a computed orbit manoeuvre.",
+    "operatorMinutes": "Available attention budget across the case. Decisions consume capacity; elapsed mission time does not replenish it.",
+    "evidenceCoverage": "Training index of applicable evidence assembled, 0\u2013100. Never call this probability, model confidence or assurance.",
+    "dataValue": "Training units for delivered, appropriately qualified EO output. No monetary meaning. Floor at zero is allowed because this is a non-negative learning reward, not a conserved flight resource."
+  },
+  "baseline": {
+    "perElapsedMinute": {
+      "batterySun": 0.16,
+      "batteryEclipse": -0.28,
+      "thermalSun": -0.025,
+      "thermalEclipse": 0.04
+    },
+    "instruction": "Integrate across sunlight/eclipse segments, then apply selected activity effects exactly once. Clamp battery to [0,100] and evidenceCoverage to [0,100], but never silently clamp a resource overspend; disable the choice or show a breached limit."
+  },
+  "trainingLimits": {
+    "batteryFloor": 30,
+    "thermalFloor": 4,
+    "deltaVReserve": 8,
+    "operatorFloor": 0
+  },
+  "evidenceCatalog": [
+    {
+      "id": "E0",
+      "title": "Signed envelope R8.1",
+      "supports": [
+        "advisory"
+      ],
+      "excludes": [
+        "autonomous_command",
+        "fleet_transfer"
+      ],
+      "scope": "ATLAS-01; planning advice only; expires at T+96."
+    },
+    {
+      "id": "E1",
+      "title": "Current human command and safing procedure",
+      "supports": [
+        "manual_command",
+        "safe_hold"
+      ],
+      "scope": "ATLAS-01 on the current ground build; independent operator check required."
+    },
+    {
+      "id": "E2",
+      "title": "Current-build shadow divergence log",
+      "supports": [
+        "advisory_continuation"
+      ],
+      "scope": "Only this training pass. Does not replace the source CO1 full-quarter requirement."
+    },
+    {
+      "id": "E3",
+      "title": "Cloud and regional validation record",
+      "supports": [
+        "qualified_eo_product"
+      ],
+      "scope": "Region, sensor and current product; excludes verified inference under cloud."
+    },
+    {
+      "id": "E4",
+      "title": "Rehearsed alternate ground pass",
+      "supports": [
+        "contact_recovery"
+      ],
+      "scope": "Current station build, signed route and fresh received telemetry."
+    },
+    {
+      "id": "E5",
+      "title": "Updated conjunction file + secondary screening",
+      "supports": [
+        "human_manoeuvre_review"
+      ],
+      "scope": "Time-tagged synthetic observations, dissent and operator coordination; not collision probability."
+    },
+    {
+      "id": "E6",
+      "title": "Integrated pass evidence and handover",
+      "supports": [
+        "limited_continuation"
+      ],
+      "scope": "Owned gaps, residual limits, expiry and named next shift."
+    },
+    {
+      "id": "X1",
+      "title": "Fleet green average",
+      "supports": [],
+      "problem": "Conceals stale ATLAS-17 and thermal ATLAS-42."
+    },
+    {
+      "id": "X2",
+      "title": "Previous-build simulator report",
+      "supports": [],
+      "problem": "Does not transfer to current R8.1 release."
+    }
+  ],
+  "stages": [
+    {
+      "id": "authority",
+      "minute": 0,
+      "title": "Before the first command",
+      "brief": "The board wants the new planner across all 84 spacecraft. The signed envelope permits advice on one eligible spacecraft. How will you use this pass?",
+      "source": "Strategy SS3; Constellation CO1\u2013CO3; Capstone SC0",
+      "choices": [
+        {
+          "id": "shadow",
+          "title": "Instrument a one-spacecraft shadow trial",
+          "effects": {
+            "operatorMinutes": -10,
+            "evidenceCoverage": 12
+          },
+          "addFlags": [
+            "shadowLogging"
+          ],
+          "delayed": [
+            {
+              "at": 70,
+              "addEvidence": [
+                "E2"
+              ],
+              "effects": {
+                "evidenceCoverage": 10
+              },
+              "text": "The current-build divergence record becomes available for limited continuation."
+            }
+          ],
+          "coaching": "You bought traceable learning, but spent a sixth of the attention budget before payload operations."
+        },
+        {
+          "id": "baseline",
+          "title": "Retain the manual baseline; record comparisons",
+          "effects": {
+            "operatorMinutes": -5,
+            "evidenceCoverage": 5
+          },
+          "addFlags": [
+            "manualBaseline"
+          ],
+          "delayed": [
+            {
+              "at": 32,
+              "effects": {
+                "operatorMinutes": -8
+              },
+              "text": "The baseline requires additional planning and comparison work on this shift."
+            }
+          ],
+          "coaching": "You preserve a known procedure. The delayed workload is real; future decisions must fit the remaining attention."
+        },
+        {
+          "id": "fleet-auto",
+          "title": "Activate autonomous planning across the fleet",
+          "unavailable": "The signed R8.1 envelope excludes autonomous commands and fleet transfer. One orbit cannot create the missing authorisation.",
+          "effects": {},
+          "coaching": "The authority boundary blocks this action before it reaches a spacecraft."
+        }
+      ]
+    },
+    {
+      "id": "cloud",
+      "minute": 14,
+      "title": "A valuable scene, mostly cloud",
+      "brief": "A flood-monitoring customer requests a rapid product. The target is 70% obscured in this synthetic case; calibration is current, but the missing ground is not observed.",
+      "source": "EO2\u2013EO3; Mission Design margins",
+      "choices": [
+        {
+          "id": "qualified",
+          "title": "Capture once and deliver a qualified product",
+          "effects": {
+            "battery": -8,
+            "thermalMargin": -2,
+            "operatorMinutes": -7,
+            "evidenceCoverage": 8,
+            "dataValue": 8
+          },
+          "addEvidence": [
+            "E3"
+          ],
+          "addFlags": [
+            "qualifiedProduct"
+          ],
+          "coaching": "You preserve provenance and label obscured areas. Delivery has value without turning inferred pixels into verified facts."
+        },
+        {
+          "id": "repeat",
+          "title": "Attempt a second observation window",
+          "requires": {
+            "batteryAtLeast": 55,
+            "thermalMarginAtLeast": 9,
+            "operatorMinutesAtLeast": 12
+          },
+          "effects": {
+            "battery": -22,
+            "thermalMargin": -7,
+            "operatorMinutes": -12,
+            "dataValue": 12,
+            "evidenceCoverage": 5
+          },
+          "addFlags": [
+            "heavyPayload"
+          ],
+          "delayed": [
+            {
+              "at": 50,
+              "effects": {
+                "battery": -12,
+                "thermalMargin": -4
+              },
+              "text": "The repeated payload activity carries a storage and thermal penalty into eclipse. Cloud remains; the output still needs qualification."
+            }
+          ],
+          "coaching": "A second chance buys more usable observations at a higher power and thermal cost. It does not guarantee clear sky."
+        },
+        {
+          "id": "defer",
+          "title": "Defer collection and return a transparent gap notice",
+          "effects": {
+            "operatorMinutes": -3,
+            "evidenceCoverage": 4
+          },
+          "addFlags": [
+            "collectionDeferred"
+          ],
+          "coaching": "You preserve spacecraft margin and avoid a weak claim, while accepting zero data value on this pass."
+        }
+      ]
+    },
+    {
+      "id": "ground",
+      "minute": 32,
+      "title": "The primary station drops out",
+      "entry": {
+        "groundContact": false,
+        "telemetryFresh": false
+      },
+      "brief": "The scheduled station cannot acquire the spacecraft. Received telemetry is ageing. The next standard pass begins at T+64; an alternate path can be made available earlier.",
+      "source": "GS2\u2013GS4; Constellation weakest vehicle",
+      "choices": [
+        {
+          "id": "alternate",
+          "title": "Use the rehearsed alternate station",
+          "requires": {
+            "operatorMinutesAtLeast": 12,
+            "batteryAtLeast": 43
+          },
+          "effects": {
+            "battery": -5,
+            "operatorMinutes": -12,
+            "evidenceCoverage": 10
+          },
+          "addEvidence": [
+            "E4"
+          ],
+          "set": {
+            "groundContact": true,
+            "telemetryFresh": true
+          },
+          "addFlags": [
+            "alternateRoute"
+          ],
+          "coaching": "You restore a verified command path now. That consumes attention and downlink energy but keeps later choices open."
+        },
+        {
+          "id": "safehold",
+          "title": "Enter the existing pre-authorised safe-hold profile",
+          "requires": {
+            "operatorMinutesAtLeast": 6
+          },
+          "effects": {
+            "operatorMinutes": -6,
+            "dataValue": -3
+          },
+          "addFlags": [
+            "safeHold"
+          ],
+          "delayed": [
+            {
+              "at": 64,
+              "set": {
+                "groundContact": true,
+                "telemetryFresh": true
+              },
+              "addEvidence": [
+                "E4"
+              ],
+              "text": "The standard station returns at T+64. Fresh telemetry confirms the hold; remaining task value is reduced."
+            }
+          ],
+          "coaching": "You use the established autonomous safing function, not the new planner. Delayed contact limits what can be reviewed before the next event."
+        },
+        {
+          "id": "cache",
+          "title": "Keep collecting against cached telemetry",
+          "unavailable": "Current-state confirmation is required for new payload activity in this case. A green cached console does not establish margin.",
+          "effects": {},
+          "coaching": "The model must visibly refuse an action whose prerequisites are missing."
+        }
+      ]
+    },
+    {
+      "id": "conjunction",
+      "minute": 50,
+      "title": "An uncertain encounter during eclipse",
+      "brief": "The conjunction desk opens an event with a T+70 decision deadline. Its orbit record is stale; the visual separation alone cannot establish collision probability. Contact recovery timing now matters.",
+      "source": "CD1\u2013CD4; ground authority seam",
+      "choices": [
+        {
+          "id": "reassess",
+          "title": "Buy updated tracking and independent reassessment",
+          "requires": {
+            "operatorMinutesAtLeast": 14
+          },
+          "effects": {
+            "operatorMinutes": -14,
+            "evidenceCoverage": 14
+          },
+          "addFlags": [
+            "trackingRequested"
+          ],
+          "delayed": [
+            {
+              "at": 64,
+              "addEvidence": [
+                "E5"
+              ],
+              "effects": {
+                "evidenceCoverage": 8
+              },
+              "text": "Updated tracking, coordination and secondary screening support a human decision to retain the current orbit in this authored branch. No collision probability is claimed."
+            }
+          ],
+          "coaching": "You spend scarce attention to reduce an evidence gap. The event stays open until the updated record arrives."
+        },
+        {
+          "id": "manual-burn",
+          "title": "Use the pre-screened human manoeuvre contingency",
+          "requires": {
+            "groundContact": true,
+            "telemetryFresh": true,
+            "operatorMinutesAtLeast": 10,
+            "deltaVAtLeast": 10
+          },
+          "effects": {
+            "deltaV": -2,
+            "battery": -3,
+            "operatorMinutes": -10,
+            "evidenceCoverage": 8
+          },
+          "addEvidence": [
+            "E5"
+          ],
+          "addFlags": [
+            "contingencyFlown"
+          ],
+          "coaching": "The existing contingency includes independent checking and secondary screening. You spend mission life to follow that authorised conservative procedure; the new planner never commands it."
+        },
+        {
+          "id": "escalate",
+          "title": "Escalate to the duty flight director; hold the new release",
+          "effects": {
+            "operatorMinutes": -5,
+            "evidenceCoverage": 4
+          },
+          "addFlags": [
+            "releaseHeld",
+            "externalDeskOwner"
+          ],
+          "delayed": [
+            {
+              "at": 64,
+              "text": "The duty director assumes event ownership under the existing mission procedure. Your candidate release remains held; event closure is not asserted."
+            }
+          ],
+          "coaching": "You explicitly transfer an unresolved event to the existing authority and withhold the AI release. This preserves an honest decision boundary; it does not declare the encounter safe."
+        }
+      ]
+    },
+    {
+      "id": "partial",
+      "minute": 70,
+      "title": "Pressure to call the pass a success",
+      "brief": "The customer and programme sponsor want an outcome. Your current state and records define what you can honestly continue. Choose a release boundary.",
+      "source": "SC3\u2013SC4; CO5; EF verification versus banked",
+      "choices": [
+        {
+          "id": "limited",
+          "title": "Continue advisory use on the eligible spacecraft only",
+          "requires": {
+            "allEvidence": [
+              "E2",
+              "E4",
+              "E5"
+            ],
+            "batteryAtLeast": 30,
+            "thermalMarginAtLeast": 4,
+            "notFlags": [
+              "releaseHeld"
+            ],
+            "operatorMinutesAtLeast": 5
+          },
+          "effects": {
+            "operatorMinutes": -5,
+            "evidenceCoverage": 6
+          },
+          "addFlags": [
+            "limitedContinuation"
+          ],
+          "coaching": "This is an expiring advisory continuation, scoped to the evidence. You have not earned autonomous or fleet authority."
+        },
+        {
+          "id": "hold-release",
+          "title": "Hold the new release; retain the existing mission baseline",
+          "effects": {
+            "operatorMinutes": -3,
+            "evidenceCoverage": 4
+          },
+          "addFlags": [
+            "releaseHeld"
+          ],
+          "coaching": "A hold can be the correct programme decision. It preserves mission operations under the existing approved baseline and records the evidence still needed."
+        },
+        {
+          "id": "fleet-success",
+          "title": "Declare the fleet ready and bank the claimed savings",
+          "unavailable": "One pass cannot transfer evidence across 84 spacecraft, close unresolved events, or convert analyst time into banked cash savings.",
+          "effects": {},
+          "coaching": "A narrow supported outcome is stronger than an unsupported broad success claim."
+        }
+      ]
+    },
+    {
+      "id": "handover",
+      "minute": 84,
+      "title": "Leave the next shift a defensible record",
+      "brief": "The final handover begins at T+84; this orbit ends at T+96. The next shift inherits your resource consumption and unresolved obligations. Select what you will fund with the remaining attention.",
+      "source": "SC2\u2013SC4; EF3\u2013EF4",
+      "choices": [
+        {
+          "id": "integrated",
+          "title": "Produce the integrated handover and evidence pack",
+          "requires": {
+            "operatorMinutesAtLeast": 7
+          },
+          "effects": {
+            "operatorMinutes": -7,
+            "evidenceCoverage": 12
+          },
+          "addEvidence": [
+            "E6"
+          ],
+          "addFlags": [
+            "handoverOwned"
+          ],
+          "coaching": "The pack links decisions to current records, remaining margins, open events, named owners, expiry and stop conditions. Written reasoning still needs human challenge."
+        },
+        {
+          "id": "minimum",
+          "title": "Use the minimum safe handover and defer the full pack",
+          "requires": {
+            "operatorMinutesAtLeast": 3
+          },
+          "effects": {
+            "operatorMinutes": -3,
+            "evidenceCoverage": 4
+          },
+          "addFlags": [
+            "handoverOwned",
+            "packDeferred"
+          ],
+          "coaching": "You transfer immediate safety obligations and retain a hold on expansion. The missing integrated pack becomes an owned follow-up, not a completed assurance claim."
+        },
+        {
+          "id": "dashboard",
+          "title": "Send only the green dashboard and capacity estimate",
+          "effects": {},
+          "addFlags": [
+            "handoverGap"
+          ],
+          "coaching": "The display omits event ownership, evidence expiry and unresolved transfer limits. The programme cannot claim integrated assurance from this handover."
+        }
+      ]
+    }
+  ],
+  "invariants": [
+    "No option can expand new-planner authority beyond advisory, regardless of evidenceCoverage or resources.",
+    "Unavailable choices show the concrete missing prerequisite; clicking them must not mutate state.",
+    "A choice commits once; replay/refresh cannot reapply effects or queued events.",
+    "Delayed events are applied once in chronological order before the next decision; events at T+64 must resolve before T+70 decisions.",
+    "A plan can be refused or held while the mission continues under the established baseline.",
+    "Shadow evidence from this pass does not satisfy CO1 full-quarter proof or autonomous command licensing.",
+    "No synthetic threshold should be described as a real orbital safety threshold or collision probability.",
+    "Resource floors apply to the predicted post-action state and all known queued resource effects; unavailable action must explain which floor is breached.",
+    "Evidence remains scoped to release, spacecraft, pass and use. EvidenceCoverage never overrides a missing required record.",
+    "All paths remain finishable: a minimal stop/hold-and-escalate action should cost no more remaining operator capacity than is available; if the nominal 5-minute escalation is unaffordable, force release hold and transfer an attention-shortfall alert without inventing free capacity.",
+    "Any terminal exhaustion becomes an explicit constrained outcome, not a fabricated reset or silent resource clamp.",
+    "Snapshots capture pre-choice state, selected option, immediate and delayed effects, evidence used, owners and post-choice state for replay/export."
+  ],
+  "argumentReview": {
+    "type": "Structured evidence-to-decision consistency check; not semantic grading of arbitrary prose.",
+    "fields": [
+      "recommendation choice: hold or one-spacecraft advisory continuation",
+      "evidence references selected by ID",
+      "primary trade-off selected: power / thermal / propellant / attention / data value",
+      "claimed consequence selected from actual ledger events",
+      "accountable role selected",
+      "measurable stop condition metric and threshold",
+      "next evidence action and due stage",
+      "free-text rationale for human review"
+    ],
+    "checks": [
+      {
+        "name": "Authority fit",
+        "rule": "Chosen recommendation cannot exceed E0; no autonomous or fleet claim."
+      },
+      {
+        "name": "Evidence applicability",
+        "rule": "Continuation requires E2,E4,E5 for this candidate and excludes X1/X2. A hold must identify at least one observed gap or breached limit."
+      },
+      {
+        "name": "Trade-off traceability",
+        "rule": "Selected trade-off and claimed consequence must appear in the actual decision ledger (e.g. deltaV consumption cannot be claimed if no contingency burn)."
+      },
+      {
+        "name": "Resource honesty",
+        "rule": "Quoted current margins and spent resources must equal replay-derived values, allowing display rounding; free text is not automatically checked."
+      },
+      {
+        "name": "Stop condition adequacy",
+        "rule": "Chosen threshold is at least as conservative as the clearly labelled training limit, relates to a live risk, names a halt action and an owner."
+      },
+      {
+        "name": "Outstanding-event ownership",
+        "rule": "An unresolved conjunction, deferred evidence pack or lost telemetry has a named responsible role and no claim of closure."
+      },
+      {
+        "name": "Expiry and next evidence",
+        "rule": "The continuation expires at the named next pass/change; the next evidence task directly closes a remaining gap."
+      }
+    ],
+    "feedback": "Quote the selected structured claim, conflicting ledger fact, and required correction. Show separate Supported / Contradicted / Missing states. Do not award a prose-quality score from character count or keyword matching."
+  },
+  "integrationNote": "Aligned to parent engine: six stages at 0,14,32,50,70,84 min, final 96; synthetic eclipse 32\u201362. Engine should retain only its four finite resource channels. evidenceCoverage is optional progress metadata, not a resource or confidence estimate; dataValue may be replaced with verified/qualified scene count. Do not describe cloud-obscured scene output as verified merely because it was captured."
+}

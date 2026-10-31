@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111e2d"><meta name="description" content="Explore AI in space through ten evidence-led playbooks, immersive 3D orbital simulations, and a mission assurance capstone.">
+  <title>Orbital Atlas — AI Space & Orbital Operations</title>
+  <link rel="stylesheet" href="mission.css">
+<link rel="icon" href="assets/ori.webp"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="visual-upgrade.css">
+<link rel="stylesheet" href="mission-deck.css"><link rel="stylesheet" href="mission-polish.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#home"><span class="brand-mark">◎</span><span>ORBITAL<span class="brand-sub">ATLAS</span></span></a>
+    <div class="side-label">YOUR MISSION CONTROL</div>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <a href="#home" data-nav="home"><span>⌂</span> Overview</a>
+      <a href="#collection" data-nav="collection"><span>▦</span> The playbook series <small>10</small></a>
+      <a href="#mission" data-nav="mission"><span>◈</span> Mission simulator <i class="mission-link-pill">NEW</i></a>
+      <a href="#lab" data-nav="lab"><span>◎</span> Space + time lab <i>4D</i></a>
+      <a href="#capstone" data-nav="capstone"><span>◇</span> Mission capstone</a>
+      <a href="#library" data-nav="library"><span>▤</span> Resource library</a>
+    </nav>
+    <div class="side-label second">THE LEARNING FLIGHT PLAN</div><nav id="module-nav" class="module-nav" aria-label="Volumes"></nav>
+    <div class="side-bottom"><div class="progress-title"><span>Your flight log</span><b id="progress-count">0 / 10</b></div><div class="progress-track"><span id="progress-bar"></span></div><p>Progress saved on this device</p><button class="text-button" id="export-progress">Export flight log ↗</button></div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><button class="menu-button" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="breadcrumb">THE AI MASTERCLASS <span>/</span> <b>SPACE & ORBITAL OPERATIONS</b></div><button class="guide-toggle" id="guide-top"><span class="status-dot"></span> Meet ORI <img src="assets/ori.webp" alt=""></button></header>
+    <main id="main" tabindex="-1"></main>
+    <footer><span>ORBITAL ATLAS <span class="footer-dot">·</span> From ambition to evidence.</span><a href="#library">Sources & model notes ↗</a></footer>
+  </div>
+  <button id="guide-launcher" class="guide-launcher" aria-label="Open ORI page guide"><div class="ori-sprite thinking" data-ori-avatar role="img" aria-label="ORI, your cartoon flight director"></div><span>Need a flight director?</span></button>
+  <aside class="guide-panel" id="guide-panel" hidden aria-label="ORI page guide"><button class="icon-button guide-close" aria-label="Close guide">×</button><div class="guide-head"><div class="ori-sprite thinking" data-ori-avatar role="img" aria-label="ORI"></div><div><span class="eyebrow">YOUR FLIGHT DIRECTOR</span><h3>Hey, I’m ORI.</h3><span class="muted">Let’s make the next decision count.</span></div></div><p id="guide-text"></p><div id="guide-steps"></div><div class="guide-actions"><button id="guide-next" class="button dark">Walk me through →</button><button id="guide-speak" class="button subtle">◖ Listen</button></div><p class="small muted">Contextual, scripted coaching · device voice</p></aside>
+  <dialog id="image-dialog"><button class="icon-button" id="close-image" aria-label="Close image">×</button><img id="dialog-image" alt=""><p id="dialog-caption"></p></dialog>
+  <div id="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body></html>

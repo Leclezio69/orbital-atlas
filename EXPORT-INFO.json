@@ -1,0 +1,10 @@
+{
+  "project": "Orbital Atlas — AI Space & Orbital Operations",
+  "applicationVersion": 6,
+  "sourceCommit": "05dc25733b7878b9be98488c9a87d1e08e28a581",
+  "preparedDate": "2026-10-31",
+  "runtimeSourceDirectory": "dist",
+  "applicationSourceUnmodified": true,
+  "packagingAdditions": ["Cursor project rules", "Vercel configuration", "npm commands and lockfile", "GitHub Actions validation", "portable local server", "deployment guide", "license notices"],
+  "validation": {"completeMissionPaths":263,"testFiles":5,"includesPhysicalDeviceTesting":false,"includesVercelDeployment":false}
+}

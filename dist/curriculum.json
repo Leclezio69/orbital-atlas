@@ -1,0 +1,1192 @@
+[
+  {
+    "id": "strategy",
+    "title": "Space Strategy",
+    "shortTitle": "Space strategy",
+    "subtitle": "Choose where AI earns the right to act.",
+    "gatePrefix": "SS",
+    "duration": 25,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-strategy-playbook.pdf",
+    "guide": "I’m ORI, your flight director. Start with one decision: what may this AI do, on which spacecraft, and who can stop it?",
+    "objectives": [
+      "Separate a simulated result from flight evidence.",
+      "Sequence autonomy by consequence and reversibility.",
+      "Write a bounded, expiring decision brief."
+    ],
+    "briefing": [
+      "Space strategy begins with consequence. Telemetry triage, image screening and planning support can create value before a system receives authority to act. A successful simulation demonstrates a candidate capability; it does not grant permission to use it in flight.",
+      "The playbook grades claims as modelled, simulated, authorised, flown and transferable. Every claim needs its scope, evidence, owner, restrictions and expiry. A software change or new operating regime can reduce the claim’s earned grade."
+    ],
+    "concepts": [
+      {
+        "title": "The claim ladder",
+        "body": "Ask what has actually been demonstrated. Authorisation requires a named signer and envelope; flown requires telemetry evidence; transfer requires new evidence."
+      },
+      {
+        "title": "Phased autonomy",
+        "body": "Separate advice, proposals and bounded action. Each increase in authority needs its own evidence and human stop authority."
+      },
+      {
+        "title": "Evidence decays",
+        "body": "Ageing, configuration changes and a changing environment can invalidate assumptions. Renewal dates and demotion triggers belong in the register."
+      },
+      {
+        "title": "Value with consequence",
+        "body": "Count cost per verified mission outcome. Price verification, oversight, failure exposure and exit alongside any hours released."
+      }
+    ],
+    "gates": [
+      {
+        "code": "SS0",
+        "title": "Commit",
+        "evidence": "Decision brief, refusal list and named flight authority.",
+        "page": "p. 26"
+      },
+      {
+        "code": "SS1",
+        "title": "Map",
+        "evidence": "Graded space map and data readiness by stage.",
+        "page": "p. 26"
+      },
+      {
+        "code": "SS2",
+        "title": "Prove",
+        "evidence": "Twin grading, Monte Carlo and shadow-flight results.",
+        "page": "p. 26"
+      },
+      {
+        "code": "SS3",
+        "title": "Authorise",
+        "evidence": "Safety case, signed envelope, demotion triggers and rollback.",
+        "page": "p. 26"
+      },
+      {
+        "code": "SS4",
+        "title": "Fly",
+        "evidence": "Telemetry-verified performance and reconciliation delta.",
+        "page": "p. 26"
+      },
+      {
+        "code": "SS5",
+        "title": "Scale",
+        "evidence": "New evidence per spacecraft and regime, economics and regulator posture.",
+        "page": "p. 26"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. A vendor demonstrates autonomous planning on one simulated spacecraft and asks for permission across your fleet.",
+      "question": "What is the defensible next decision?",
+      "options": [
+        {
+          "text": "Approve fleet authority because the simulation passed.",
+          "correct": false,
+          "feedback": "The result has not earned flight or transfer claims. Fleet scale amplifies a shared error."
+        },
+        {
+          "text": "Restrict the claim to simulation; define a shadow trial and signed envelope before action.",
+          "correct": true,
+          "feedback": "You preserve useful evidence while requiring the missing authority, flight and transfer evidence."
+        },
+        {
+          "text": "Reject every AI use until autonomous flight is already proven.",
+          "correct": false,
+          "feedback": "Reversible advisory and shadow work can build evidence without granting command authority."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "Space AI decision brief",
+      "fields": [
+        "Function, spacecraft, regime and decision sought",
+        "Claim rung, evidence reference and expiry",
+        "Authority, prohibited actions and halt conditions"
+      ]
+    },
+    "goldenRules": [
+      "A modelled manoeuvre is not a flown mission.",
+      "License by spacecraft, orbit, pass and failure mode.",
+      "Phase authority by consequence.",
+      "A scale decision inherits restrictions and expiry.",
+      "A partial pass is a valid outcome."
+    ],
+    "sourcePages": {
+      "briefing": "pp. 2–3",
+      "concepts": "pp. 7, 10, 19–20",
+      "gates": "p. 26",
+      "templates": "pp. 29–30",
+      "rules": "p. 31"
+    }
+  },
+  {
+    "id": "mission-design",
+    "title": "Mission Design & Autonomy",
+    "shortTitle": "Mission design",
+    "subtitle": "Explore thousands of futures. Sign for one.",
+    "gatePrefix": "MD",
+    "duration": 30,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-mission-design-playbook.pdf",
+    "guide": "An elegant trajectory is only a candidate. Let’s find the margins, independent checks and safe states that make the design defensible.",
+    "objectives": [
+      "Distinguish candidate generation from independent verification.",
+      "Record what a trade study sacrifices.",
+      "Allocate autonomy and degradation before baseline approval."
+    ],
+    "briefing": [
+      "AI can widen a mission design search, compare alternatives and reveal trade-offs. The selected design still needs signed objectives, physical feasibility, resource margins and independent verification.",
+      "The design ladder runs from generated to explored, traded, verified and transferable. Different artefact classes can legitimately sit at different gates: a trajectory may be verified while the autonomy architecture remains deferred."
+    ],
+    "concepts": [
+      {
+        "title": "Trade-offs remain decisions",
+        "body": "A Pareto front exposes competing objectives; it does not select the mission. Record weights, alternatives, near misses and what was traded away."
+      },
+      {
+        "title": "Margins are coupled",
+        "body": "Power, thermal, mass and communications assumptions interact. An apparent gain can export risk into another subsystem."
+      },
+      {
+        "title": "Independent verification",
+        "body": "Use independent re-propagation, dispersed Monte Carlo and failure-seeking injection tests. State model fidelity gaps."
+      },
+      {
+        "title": "Design the degraded mission",
+        "body": "Allocate onboard versus ground authority with light-time and consequence in mind. Define safe states, halt methods and operation with autonomy off."
+      }
+    ],
+    "gates": [
+      {
+        "code": "MD0",
+        "title": "Intent",
+        "evidence": "Signed objectives, exclusions and authority policy.",
+        "page": "p. 26"
+      },
+      {
+        "code": "MD1",
+        "title": "Exploration",
+        "evidence": "Graded design map, tools licensed by stage and fidelity statements.",
+        "page": "p. 26"
+      },
+      {
+        "code": "MD2",
+        "title": "Trades",
+        "evidence": "Signed objectives, Pareto evidence and near misses surfaced.",
+        "page": "p. 26"
+      },
+      {
+        "code": "MD3",
+        "title": "Architecture",
+        "evidence": "Allocation matrix, envelopes, fault management and degradation plans.",
+        "page": "p. 26"
+      },
+      {
+        "code": "MD4",
+        "title": "Verification",
+        "evidence": "Independent re-propagation, dispersed Monte Carlo and injection tests.",
+        "page": "p. 26"
+      },
+      {
+        "code": "MD5",
+        "title": "Scale and transfer",
+        "evidence": "Verified evidence by artefact class and re-verification without the vendor demonstrated.",
+        "page": "p. 26"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. A design optimiser improves revisit time by consuming battery and communications margin. Its own simulation reports success.",
+      "question": "What evidence should the design review require?",
+      "options": [
+        {
+          "text": "Request independent dispersed verification and a signed record of margins and trade-offs.",
+          "correct": true,
+          "feedback": "The decision becomes auditable and the design is tested beyond its optimiser’s preferred assumptions."
+        },
+        {
+          "text": "Select the oldest design without comparing alternatives.",
+          "correct": false,
+          "feedback": "Heritage may be useful evidence, but it does not answer the new mission’s objectives or changed constraints."
+        },
+        {
+          "text": "Accept the highest-ranked design; the model included those constraints.",
+          "correct": false,
+          "feedback": "A model checking itself does not establish independent robustness or expose all coupled margins."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "Mission trade record",
+      "fields": [
+        "Objectives, weights and alternatives",
+        "Margins consumed and independent verification",
+        "Selected design, exclusions and degradation behaviour"
+      ]
+    },
+    "goldenRules": [
+      "AI proposes; humans choose the mission.",
+      "An optimum is a hypothesis until verified.",
+      "Margins belong in every trade study.",
+      "Design safe states before flight.",
+      "Transfer requires fresh verification."
+    ],
+    "sourcePages": {
+      "briefing": "pp. 2–3",
+      "concepts": "pp. 7–14",
+      "gates": "p. 26",
+      "templates": "pp. 29–30",
+      "rules": "p. 31"
+    }
+  },
+  {
+    "id": "constellation",
+    "title": "Satellite & Constellation Operations",
+    "shortTitle": "Constellation operations",
+    "subtitle": "Manage the fleet without losing the spacecraft.",
+    "gatePrefix": "CO",
+    "duration": 30,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-constellation-playbook.pdf",
+    "guide": "Look past the green fleet average. Which spacecraft needs attention, what could fail in chorus, and can this shift still stop it?",
+    "objectives": [
+      "Find risks hidden by fleet averages.",
+      "Separate generated commands from independent checks.",
+      "Plan staged updates, alert budgets and demotion."
+    ],
+    "briefing": [
+      "Constellation operations changes the scale of consequence. A common software or planning error can affect many spacecraft at once, while operator attention becomes a scarce resource.",
+      "The operating licence is scoped by stage, spacecraft, plane, pass and failure mode. Triage may mature before automated updates. A buried critical alert, unannounced model change or failed rollback drill can demote a stage."
+    ],
+    "concepts": [
+      {
+        "title": "Fleet health is granular",
+        "body": "Inspect the weakest spacecraft and correlated anomalies. Blended indicators can conceal a failing vehicle or plane."
+      },
+      {
+        "title": "Independent command checking",
+        "body": "A separate deterministic checker constrains generated commands. It must not inherit the generator’s assumptions as its only protection."
+      },
+      {
+        "title": "Canaries before fleets",
+        "body": "Stage uploads with verification and rollback evidence. Prove per-vehicle brakes before extending an update wave."
+      },
+      {
+        "title": "Attention is a resource",
+        "body": "Measure alert load, misses and shift capacity. Automation that depends on heroic intervention has not solved operations."
+      }
+    ],
+    "gates": [
+      {
+        "code": "CO0",
+        "title": "Inventory",
+        "evidence": "List and own every automation, model and vendor path; classify reversibility.",
+        "page": "p. 27"
+      },
+      {
+        "code": "CO1",
+        "title": "Shadow",
+        "evidence": "Parallel human operations for a full quarter, with divergences explained and no authority.",
+        "page": "p. 27"
+      },
+      {
+        "code": "CO2",
+        "title": "Advisory",
+        "evidence": "Live triage and planning recommendations, seeded-fault exercises and measured alert budget.",
+        "page": "p. 27"
+      },
+      {
+        "code": "CO3",
+        "title": "Checked action",
+        "evidence": "Template commands through independent checker; per-vehicle brakes and canary update path proven.",
+        "page": "p. 27"
+      },
+      {
+        "code": "CO4",
+        "title": "Licensed operations",
+        "evidence": "Stage licences per plane; drills, degradation ladder and evidence packs operating.",
+        "page": "p. 27"
+      },
+      {
+        "code": "CO5",
+        "title": "Scale",
+        "evidence": "Extension by stage; refused stages remain explicitly refused.",
+        "page": "p. 27"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. A fleet dashboard is healthy, but one orbital plane has increasing power anomalies after an update.",
+      "question": "What should the shift lead do?",
+      "options": [
+        {
+          "text": "Let the planning model rewrite its own command limits.",
+          "correct": false,
+          "feedback": "Changing the authority envelope during an anomaly needs the approved decision and change process."
+        },
+        {
+          "text": "Trust the fleet average and continue the update wave.",
+          "correct": false,
+          "feedback": "The average hides a correlated local problem and increases exposure."
+        },
+        {
+          "text": "Pause the affected wave, inspect raw vehicle evidence and apply the agreed demotion or rollback path.",
+          "correct": true,
+          "feedback": "The response is scoped to evidence, protects the fleet and preserves a route to re-evidence the release."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "Fleet operating card",
+      "fields": [
+        "Stage, spacecraft cohort and current authority",
+        "Alert budget, checker and update-wave evidence",
+        "Halt, rollback and restart owners"
+      ]
+    },
+    "goldenRules": [
+      "Grade the weakest spacecraft before the fleet average.",
+      "Independent checking precedes commanding.",
+      "Prove rollback before expanding an update.",
+      "Operator attention belongs in the safety case.",
+      "A gate can be lost as well as won."
+    ],
+    "sourcePages": {
+      "briefing": "pp. 2–3",
+      "concepts": "pp. 4, 6, 12, 16",
+      "gates": "p. 27",
+      "templates": "pp. 30–31",
+      "rules": "p. 32"
+    }
+  },
+  {
+    "id": "earth-observation",
+    "title": "Earth Observation & Data",
+    "shortTitle": "Earth observation",
+    "subtitle": "Turn a compelling image into a verified product.",
+    "gatePrefix": "EO",
+    "duration": 25,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-earth-observation-playbook.pdf",
+    "guide": "Beautiful imagery can make a weak claim feel certain. Let’s separate captured pixels, inferred detail and independent ground truth.",
+    "objectives": [
+      "Track the claim from capture to verification.",
+      "Evaluate performance by region, season and class.",
+      "Preserve uncertainty, lineage and correction paths."
+    ],
+    "briefing": [
+      "Earth observation products carry the authority of imagery, but detections and classifications remain model outputs. Errors fall on real places and users, so the product claim must match the evidence available for its intended use.",
+      "The ladder distinguishes captured, calibrated, analysed, verified and transferable. Verification is local to the sensor, region, season and use; one global accuracy figure cannot replace that scope."
+    ],
+    "concepts": [
+      {
+        "title": "Geographic validity",
+        "body": "Validate on sealed independent sets by region, season and class. A result in one area does not establish performance elsewhere."
+      },
+      {
+        "title": "Provenance travels",
+        "body": "Uncertainty, masks, lineage and processing versions accompany the product through catalogues and APIs."
+      },
+      {
+        "title": "Inference is labelled",
+        "body": "Missing observations remain visible. Filled or enhanced detail must be identified as inference rather than captured evidence."
+      },
+      {
+        "title": "Corrections propagate",
+        "body": "A product correction needs a delivery path as effective as the original publication, with provisional products clearly bounded."
+      }
+    ],
+    "gates": [
+      {
+        "code": "EO0",
+        "title": "Scope",
+        "evidence": "Product list, intended rung by region and use, and signed refusals.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EO1",
+        "title": "Prove",
+        "evidence": "Calibration/validation report and sealed-set results by region, season and class.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EO2",
+        "title": "Pilot",
+        "evidence": "Pilot register, abstention/correction logs and two-speed delivery working.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EO3",
+        "title": "Integrate",
+        "evidence": "Uncertainty and lineage through every channel; correction propagation tested.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EO4",
+        "title": "License",
+        "evidence": "Per-product licences with screening and privacy enforcement.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EO5",
+        "title": "Scale",
+        "evidence": "Funded rolling re-validation, demotion automation and verified unit cost.",
+        "page": "p. 29"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. A flood map contains cloud-obscured areas filled by a model; a responder needs a rapid product.",
+      "question": "How should the product be released?",
+      "options": [
+        {
+          "text": "Display all filled areas as equally observed water.",
+          "correct": false,
+          "feedback": "That conceals the distinction between observation and inference."
+        },
+        {
+          "text": "Deliver a clearly provisional layer with inference masks, uncertainty, expiry and a correction path.",
+          "correct": true,
+          "feedback": "The user receives timely support while the product preserves its limits and provenance."
+        },
+        {
+          "text": "Call the whole map independently verified because one district was checked.",
+          "correct": false,
+          "feedback": "Verification in one cell does not validate every region and condition."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "Data product licence",
+      "fields": [
+        "Sensor, region, season, use and earned rung",
+        "Ground truth, uncertainty and inferred areas",
+        "Expiry, abstention and correction route"
+      ]
+    },
+    "goldenRules": [
+      "A detected pixel is not a verified fact.",
+      "Validate by region, season and class.",
+      "Keep uncertainty and lineage with the product.",
+      "Label every inferred fill or enhancement.",
+      "Corrections must travel with the original product."
+    ],
+    "sourcePages": {
+      "briefing": "p. 2",
+      "concepts": "pp. 6–11, 17–19, 32",
+      "gates": "p. 29",
+      "templates": "p. 31",
+      "rules": "p. 32"
+    }
+  },
+  {
+    "id": "debris",
+    "title": "Conjunction, Debris & Orbital Safety",
+    "shortTitle": "Orbital safety",
+    "subtitle": "Make the decision before the window closes.",
+    "gatePrefix": "CD",
+    "duration": 30,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-debris-playbook.pdf",
+    "guide": "A close approach is a decision with a clock. We’ll follow the uncertainty, coordination and secondary screening before considering an action.",
+    "objectives": [
+      "Explain why covariance quality matters.",
+      "Build a complete conjunction event record.",
+      "Preserve human authority, coordination and disposal obligations."
+    ],
+    "briefing": [
+      "Orbital safety begins with incomplete knowledge. Catalogue coverage, orbit determination and covariance affect how an event is understood. A precise-looking answer can still rest on weak or stale observations.",
+      "The decision chain connects screening, assessment, operator coordination, manoeuvre planning and verification. A proposed manoeuvre needs secondary screening: reducing one event must not create another unexamined exposure."
+    ],
+    "concepts": [
+      {
+        "title": "Uncertainty is part of the product",
+        "body": "Assess covariance calibration and catalogue limits. Do not treat a single collision probability as certainty or a universal action threshold."
+      },
+      {
+        "title": "The event file remembers",
+        "body": "Record data quality, updates, options, dissent, timing, authority and outcome. The record supports the decision and later learning."
+      },
+      {
+        "title": "Coordinate across operators",
+        "body": "The other object is part of the decision. Ownership, contact and coordination cannot be replaced by a local optimisation."
+      },
+      {
+        "title": "Safety continues after revenue",
+        "body": "Disposal, passivation and end-of-life verification remain mission obligations. A revenue stop does not make the object safe."
+      }
+    ],
+    "gates": [
+      {
+        "code": "CD0",
+        "title": "Scope",
+        "evidence": "Shell budgets, standing refusals and signed decision-authority table.",
+        "page": "p. 29"
+      },
+      {
+        "code": "CD1",
+        "title": "Prove",
+        "evidence": "Covariance calibration by shell and audited screening recall against reference.",
+        "page": "p. 29"
+      },
+      {
+        "code": "CD2",
+        "title": "Pilot",
+        "evidence": "Shadow comparison with human desk; complete miss and dissent logs.",
+        "page": "p. 29"
+      },
+      {
+        "code": "CD3",
+        "title": "Integrate",
+        "evidence": "Event files, escalation clocks and coordination register; mandatory secondary screening.",
+        "page": "p. 29"
+      },
+      {
+        "code": "CD4",
+        "title": "License",
+        "evidence": "Per-shell licences, spacecraft disposal watch and drilled halt/restart.",
+        "page": "p. 29"
+      },
+      {
+        "code": "CD5",
+        "title": "Scale",
+        "evidence": "Funded recall/calibration audits and unit cost reported alongside recall.",
+        "page": "p. 29"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. A candidate avoidance manoeuvre reduces the primary event estimate, but its secondary screening is incomplete.",
+      "question": "What is missing from the decision?",
+      "options": [
+        {
+          "text": "Secondary screening, updated event evidence and the named decision authority’s assessment.",
+          "correct": true,
+          "feedback": "The decision must consider the full affected trajectory and its evidence, within the mission’s authorised process."
+        },
+        {
+          "text": "A universal probability threshold copied from another mission.",
+          "correct": false,
+          "feedback": "Thresholds belong to the applicable safety case, data quality and authority; this exercise does not supply operational limits."
+        },
+        {
+          "text": "Nothing; the primary risk estimate improved.",
+          "correct": false,
+          "feedback": "The manoeuvre can shift risk into another event or operating constraint."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "Conjunction decision record",
+      "fields": [
+        "Event, data quality, covariance and decision clock",
+        "Options, coordination and secondary screening",
+        "Named decider, rationale, verification and follow-up"
+      ]
+    },
+    "goldenRules": [
+      "A close approach is a decision with a deadline.",
+      "Uncertainty must remain visible.",
+      "Screen the proposed manoeuvre for secondary events.",
+      "Record authority and dissent.",
+      "The mission ends when the object is safe."
+    ],
+    "sourcePages": {
+      "briefing": "pp. 2–3",
+      "concepts": "pp. 5, 7–11, 16",
+      "gates": "p. 29",
+      "templates": "p. 31",
+      "rules": "p. 32"
+    }
+  },
+  {
+    "id": "ground-systems",
+    "title": "Ground Systems & Mission Software",
+    "shortTitle": "Ground systems",
+    "subtitle": "Treat Earth-based software as a flight system.",
+    "gatePrefix": "GS",
+    "duration": 30,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-ground-systems-playbook.pdf",
+    "guide": "A green console is a claim. Let’s test the command path, the raw record and what happens when the next pass fails.",
+    "objectives": [
+      "Trace the end-to-end command and telemetry chain.",
+      "Require realistic rehearsal before release.",
+      "Design independent checks, failover and paired versioning."
+    ],
+    "briefing": [
+      "Ground systems combine station networks, schedules, command loads, telemetry pipelines and human interpretation. A quiet error can corrupt a command or mislead a controller at the worst available moment.",
+      "The claim ladder moves through coded, tested, integrated, rehearsed and transferable. The scope names the mission, station network, release and pass. Unit tests alone do not establish an operational rehearsal."
+    ],
+    "concepts": [
+      {
+        "title": "Version the pair",
+        "body": "Ground and flight configurations are licensed together. A vendor or model update enters the mission’s change control."
+      },
+      {
+        "title": "Protect the raw record",
+        "body": "AI summaries must not overwrite raw telemetry. Controllers need a direct path from a conclusion to its primary evidence."
+      },
+      {
+        "title": "Rehearse under failure",
+        "body": "Test crews, failover and rollback on realistic shadow passes. Recovery needs are expressed in mission passes, not just business hours."
+      },
+      {
+        "title": "Keep checking independent",
+        "body": "An independent deterministic checker constrains generated commands. The safety path must survive the provider failure it claims to tolerate."
+      }
+    ],
+    "gates": [
+      {
+        "code": "GS0",
+        "title": "Frame",
+        "evidence": "Ground map by mission, signed refusals and a started register.",
+        "page": "p. 29"
+      },
+      {
+        "code": "GS1",
+        "title": "Build",
+        "evidence": "Paired versioning, independent checker and assembled golden passes.",
+        "page": "p. 29"
+      },
+      {
+        "code": "GS2",
+        "title": "Integrate",
+        "evidence": "Flatsat/HIL results, fault-injection scores and failover tested in shadow.",
+        "page": "p. 29"
+      },
+      {
+        "code": "GS3",
+        "title": "Rehearse",
+        "evidence": "Full crew rehearsals plus rollback/failover on real shadow passes.",
+        "page": "p. 29"
+      },
+      {
+        "code": "GS4",
+        "title": "License",
+        "evidence": "Per-mission licences, live freeze/change control and drilled halt/restart.",
+        "page": "p. 29"
+      },
+      {
+        "code": "GS5",
+        "title": "Scale",
+        "evidence": "Release-ring evidence for each new mission and unit cost beside rehearsal evidence.",
+        "page": "p. 29"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. An AI-assisted parser change passes unit tests shortly before an operational contact. Failover has not been rehearsed.",
+      "question": "What should release management require?",
+      "options": [
+        {
+          "text": "Remove the independent checker to simplify the deployment.",
+          "correct": false,
+          "feedback": "That removes a core control precisely when a new generated or interpreted path is being introduced."
+        },
+        {
+          "text": "Deploy immediately because the unit test suite is green.",
+          "correct": false,
+          "feedback": "The evidence does not establish end-to-end behaviour or recovery during a real pass."
+        },
+        {
+          "text": "Defer operational release until integration, crew rehearsal and rollback evidence satisfy the release gate.",
+          "correct": true,
+          "feedback": "The release earns operational reliance through the complete ground chain and its failure behaviour."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "Ground release evidence card",
+      "fields": [
+        "Mission, flight/ground versions and change scope",
+        "Integration, fault-injection and crew rehearsal evidence",
+        "Freeze window, failover, rollback and restart authority"
+      ]
+    },
+    "goldenRules": [
+      "A green console is not proof of a trustworthy ground chain.",
+      "Preserve raw telemetry.",
+      "Version flight and ground together.",
+      "Rehearse before operational release.",
+      "Prove rollback and failover on realistic passes."
+    ],
+    "sourcePages": {
+      "briefing": "p. 2",
+      "concepts": "pp. 5–6, 9–11, 18, 20",
+      "gates": "p. 29",
+      "templates": "p. 31",
+      "rules": "p. 32"
+    }
+  },
+  {
+    "id": "lunar",
+    "title": "Lunar & Deep-Space Operations",
+    "shortTitle": "Lunar & deep space",
+    "subtitle": "Design for the moment Earth cannot answer.",
+    "gatePrefix": "LD",
+    "duration": 30,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-lunar-playbook.pdf",
+    "guide": "At distance, the next answer may arrive too late. We’ll design the decision envelope, survival reserve and missed-contact state before departure.",
+    "objectives": [
+      "Allocate decisions around communication delay.",
+      "Protect survival reserves and deterministic fault response.",
+      "Evaluate rehearsal fidelity and phase-specific authority."
+    ],
+    "briefing": [
+      "Distance changes the control problem. Communications delays and outages mean some decisions cannot wait for Earth. Those decisions need a pre-authorised envelope, local safeguards and a defined degraded state.",
+      "Authority is scoped by destination, vehicle, light-time regime and mission phase. A lunar-orbit demonstration does not establish surface or deep-space readiness. Rehearsals must include real delay, missed contacts and the gaps between the analogue and flight environment."
+    ],
+    "concepts": [
+      {
+        "title": "Intent travels; authority is bounded",
+        "body": "Pre-sign the actions that cannot wait. Unbounded trajectory or landing-site changes are excluded by the source’s standing refusals."
+      },
+      {
+        "title": "Survival comes first",
+        "body": "Keep survival reserves outside optimisation. Simple, deterministic fault detection, isolation and recovery protects the mission."
+      },
+      {
+        "title": "Critical phases stay stable",
+        "body": "Freeze learning during descent and other critical phases. Prepare demotion triggers and safe states before departure."
+      },
+      {
+        "title": "Rehearse the silence",
+        "body": "Test missed contacts, no-wake cases, delay and recovery. State fidelity gaps instead of treating an analogue as flight proof."
+      }
+    ],
+    "gates": [
+      {
+        "code": "LD0",
+        "title": "Frame",
+        "evidence": "Destination map by phase, signed refusals and opened authorisation/protection category.",
+        "page": "p. 29"
+      },
+      {
+        "code": "LD1",
+        "title": "Plan",
+        "evidence": "Autonomy tiers/envelopes, signed science charter and reserves, reporting contract.",
+        "page": "p. 29"
+      },
+      {
+        "code": "LD2",
+        "title": "Simulate",
+        "evidence": "Dispersed failure-seeking campaigns, flight-configuration twin and listed fidelity gaps.",
+        "page": "p. 29"
+      },
+      {
+        "code": "LD3",
+        "title": "Rehearse",
+        "evidence": "Crew analogue/delay rehearsals with no-wake, missed-contact and demotion cases.",
+        "page": "p. 29"
+      },
+      {
+        "code": "LD4",
+        "title": "License",
+        "evidence": "Per-phase licences, signed expiring envelopes and halt honoured in drill.",
+        "page": "p. 29"
+      },
+      {
+        "code": "LD5",
+        "title": "Scale",
+        "evidence": "Survival evidence for each new destination; unit cost beside rehearsal evidence.",
+        "page": "p. 29"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. A rover finds a promising science target outside its signed route envelope as contact is lost.",
+      "question": "What should the training decision prioritise?",
+      "options": [
+        {
+          "text": "Expand its own authority because the target may be valuable.",
+          "correct": false,
+          "feedback": "Science opportunity does not create new authority or justify spending protected survival reserves."
+        },
+        {
+          "text": "Follow the pre-signed missed-contact and safe-state policy, preserving reserves and recording the opportunity.",
+          "correct": true,
+          "feedback": "The vehicle stays within authority already granted for silence and leaves an evidence trail for a later decision."
+        },
+        {
+          "text": "Assume the next Earth command will arrive immediately.",
+          "correct": false,
+          "feedback": "The mission architecture must account for delay and missed contact rather than depend on an unavailable intervention."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "Distance autonomy envelope",
+      "fields": [
+        "Destination, phase, delay and permitted actions",
+        "Survival reserve, demotion triggers and safe state",
+        "Missed-contact rehearsal, fidelity gaps and expiry"
+      ]
+    },
+    "goldenRules": [
+      "Decisions that cannot wait stay inside pre-signed envelopes.",
+      "No optimiser spends the survival reserve.",
+      "Freeze learning in critical phases.",
+      "Rehearse missed contact as a designed state.",
+      "A simulated landing is not a landed mission."
+    ],
+    "sourcePages": {
+      "briefing": "p. 2",
+      "concepts": "pp. 4–5, 7, 9–10, 16–18",
+      "gates": "p. 29",
+      "templates": "p. 31",
+      "rules": "p. 32"
+    }
+  },
+  {
+    "id": "security",
+    "title": "Space Security & Resilience",
+    "shortTitle": "Security & resilience",
+    "subtitle": "Assume a breach. Prove the mission survives.",
+    "gatePrefix": "SR",
+    "duration": 30,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-security-playbook.pdf",
+    "guide": "We’ll trace trust from the ground to the payload. The test is whether a compromised link can be contained without losing the whole mission.",
+    "objectives": [
+      "Map threats across ground, link, space and user segments.",
+      "Separate command authority and limit trust propagation.",
+      "Test resilience with end-to-end exercises."
+    ],
+    "briefing": [
+      "Space security protects a system that cannot be physically recalled. Ground infrastructure, command links, onboard software, crosslinks and data products have different exposures, and their boundaries need explicit owners.",
+      "The security ladder is mapped, assessed, hardened, exercised and transferable. An isolated server test cannot establish mission resilience. Exercises must measure detection, containment, degraded operation and recovery against named adversary classes."
+    ],
+    "concepts": [
+      {
+        "title": "Authority is separated",
+        "body": "No unauthenticated commanding and no single credential that both plans and executes a critical command. Expire test and vendor access."
+      },
+      {
+        "title": "Trust has boundaries",
+        "body": "Segment ground systems and crosslinks. A compromised vehicle should not automatically inherit authority across the constellation."
+      },
+      {
+        "title": "Telemetry can mislead",
+        "body": "Use integrity checks, independent observables and impossible-physics checks. A green wall may reflect falsified inputs."
+      },
+      {
+        "title": "Exercise mission outcomes",
+        "body": "Rehearse isolation, revocation, safe modes and recovery. Record seeded intrusion detection and time-to-detect in passes."
+      }
+    ],
+    "gates": [
+      {
+        "code": "SR0",
+        "title": "Frame",
+        "evidence": "Security map, named adversary classes and signed refusals.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SR1",
+        "title": "Map",
+        "evidence": "Graded ten-stage surface, live provenance register and owned seams.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SR2",
+        "title": "Assess",
+        "evidence": "Threat models and assessments across ground/link/onboard/data; key plan.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SR3",
+        "title": "Harden",
+        "evidence": "Authentication, two-key control, segmentation, trust zones and degradation ladder.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SR4",
+        "title": "License",
+        "evidence": "Full-mission exercise, published detection rates and honoured halt drill.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SR5",
+        "title": "Scale",
+        "evidence": "Exercise evidence by new trust zone and unit cost beside exercises.",
+        "page": "p. 29"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. A suspected compromised ground credential is linked to one trust zone. The fleet telemetry display remains normal.",
+      "question": "What is the strongest response plan?",
+      "options": [
+        {
+          "text": "Use the rehearsed isolation and revocation process; confirm state through independent observables.",
+          "correct": true,
+          "feedback": "This tests and contains the suspected trust breach without assuming the compromised chain is truthful."
+        },
+        {
+          "text": "Give the security AI unlogged command authority to retaliate.",
+          "correct": false,
+          "feedback": "That turns the defender into another uncontrolled command path and violates the source’s standing refusals."
+        },
+        {
+          "text": "Treat the green display as proof there is no intrusion.",
+          "correct": false,
+          "feedback": "Telemetry integrity is itself part of the threat model."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "Mission resilience card",
+      "fields": [
+        "Adversary, segment, trust zone and success condition",
+        "Authentication, separation and independent observables",
+        "Exercise evidence, isolation owner and recovery gate"
+      ]
+    },
+    "goldenRules": [
+      "Assume breach and design for survival.",
+      "Authenticate every command.",
+      "Separate critical planning and execution authority.",
+      "Test the mission, not only a component.",
+      "Verify credential death at disposal."
+    ],
+    "sourcePages": {
+      "briefing": "pp. 2–3",
+      "concepts": "pp. 5–7, 12, 20",
+      "gates": "p. 29",
+      "templates": "p. 31",
+      "rules": "p. 32"
+    }
+  },
+  {
+    "id": "economics",
+    "title": "Space Economics & Fleet Finance",
+    "shortTitle": "Space economics",
+    "subtitle": "Show which savings actually reach the accounts.",
+    "gatePrefix": "EF",
+    "duration": 25,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-economics-playbook.pdf",
+    "guide": "A saved hour is not a saved dollar. We’ll follow the benefit through verification, transferred cost, propellant and the actual budget.",
+    "objectives": [
+      "Separate claimed, released and banked benefits.",
+      "Build fully loaded cost per verified outcome.",
+      "Protect reserves and account for lifecycle transfers."
+    ],
+    "briefing": [
+      "AI can move cost across the mission lifecycle rather than remove it. Design efficiency may add verification work; automated tasking may add safety work; reduced operator effort may consume propellant or contingency capacity.",
+      "The economics ladder runs through claimed, costed, verified, banked and transferable. Fix a representative signed baseline before the pilot, reconcile benefits to primary records and keep operational quality beside the financial result."
+    ],
+    "concepts": [
+      {
+        "title": "Three different benefit states",
+        "body": "Claimed benefits are forecasts; released capacity is demonstrated work removed; banked value is reflected in the actual budget or accounts."
+      },
+      {
+        "title": "Price the full outcome",
+        "body": "Include licences, compute, verification, oversight, incidents and exit. Use a verified unit appropriate to the mission and report by cohort."
+      },
+      {
+        "title": "Propellant has an opportunity cost",
+        "body": "Use a signed shadow price and account for effects on fleet life. Survival and disposal reserves stay fenced out of optimisation."
+      },
+      {
+        "title": "Transfers need owners",
+        "body": "Record cost exported to other lifecycle stages and obtain the receiving owner’s agreement. Underspent contingency is not automatically efficiency."
+      }
+    ],
+    "gates": [
+      {
+        "code": "EF0",
+        "title": "Frame",
+        "evidence": "Defined units, signed refusals and agreed baseline method.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EF1",
+        "title": "Map",
+        "evidence": "Lifecycle map and versioned model, including funded disposal.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EF2",
+        "title": "Cost",
+        "evidence": "Metered AI cost, signed delta-v shadow price and rate-based reserves.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EF3",
+        "title": "Verify",
+        "evidence": "Independent primary-record verification, forecast backtests and adversarial audit samples.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EF4",
+        "title": "License",
+        "evidence": "Signed claimed/released/banked figures, cohort unit costs and recorded challenge.",
+        "page": "p. 29"
+      },
+      {
+        "code": "EF5",
+        "title": "Scale",
+        "evidence": "Re-verification for each new mission and tranche sized to verified evidence.",
+        "page": "p. 29"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. A pilot saves analyst hours but adds verification cost, extra passes and propellant use. Management wants the full headline saving booked.",
+      "question": "What should finance require?",
+      "options": [
+        {
+          "text": "Count unused anomaly reserves as the missing saving.",
+          "correct": false,
+          "feedback": "A quiet period does not prove that the reserve is no longer needed."
+        },
+        {
+          "text": "Book the gross hours as cash savings now.",
+          "correct": false,
+          "feedback": "Hours are not cash, and the result excludes costs exported to the rest of the mission."
+        },
+        {
+          "text": "Reconcile the net benefit to the signed baseline and primary records; separate released capacity from banked value.",
+          "correct": true,
+          "feedback": "The claim becomes auditable and avoids treating a forecast or transfer as money saved."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "Verified benefit record",
+      "fields": [
+        "Baseline, unit, cohort and quality measure",
+        "Fully loaded costs, delta-v effect and transferred costs",
+        "Claimed, released, banked and primary-record verification"
+      ]
+    },
+    "goldenRules": [
+      "A saved hour is not a saved dollar.",
+      "Fix the baseline before the pilot.",
+      "Count fully loaded cost per verified outcome.",
+      "Do not optimise away survival or disposal reserves.",
+      "A forecast is labelled until verified and banked."
+    ],
+    "sourcePages": {
+      "briefing": "pp. 2–3",
+      "concepts": "pp. 3–7, 12, 15–17, 20",
+      "gates": "p. 29",
+      "templates": "p. 31",
+      "rules": "p. 32"
+    }
+  },
+  {
+    "id": "capstone",
+    "title": "Space Capstone & Assurance",
+    "shortTitle": "Integrated capstone",
+    "subtitle": "Defend one programme across every boundary.",
+    "gatePrefix": "SC",
+    "duration": 45,
+    "durationNote": "Suggested study time; editorial estimate",
+    "source": "ai-space-capstone-playbook.pdf",
+    "guide": "Your final review joins the whole mission. Find the seam where two sound-looking claims fail together, then defend a narrower decision with evidence.",
+    "objectives": [
+      "Assemble a cross-volume evidence chain.",
+      "Resolve conflicting priorities and stale licences.",
+      "Defend a scoped board decision with explicit refusals."
+    ],
+    "briefing": [
+      "Nine separately reviewed components do not establish an assured programme. The capstone examines whether the licences, assumptions, ownership and failure responses hold together on the same mission and pass.",
+      "The assurance ladder is assembled, evidenced, challenged, assured and transferable. Primary records, independent challenge and integrated failure exercises matter more than the number of completed documents. Scope, expiry and voiding conditions remain explicit."
+    ],
+    "concepts": [
+      {
+        "title": "Own the seams",
+        "body": "Connect strategy, design, operations, products, orbital safety, ground, distance, security and economics. Name the owner of every handoff."
+      },
+      {
+        "title": "Align claims honestly",
+        "body": "Each domain has its own ladder. Do not equate a tested component with a flown capability or a claimed saving with banked value."
+      },
+      {
+        "title": "Resolve conflicts in advance",
+        "body": "The playbook gives safety precedence over savings and survival over service. Record how competing authorities and constraints are reconciled."
+      },
+      {
+        "title": "Challenge the whole case",
+        "body": "Run one exercise that crosses multiple domains. Apply demotions, test evidence retrieval and make the board decision narrower when evidence is weak."
+      }
+    ],
+    "gates": [
+      {
+        "code": "SC0",
+        "title": "Frame",
+        "evidence": "Named assurance decision, weakest-link rule, precedence and inherited refusals.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SC1",
+        "title": "Assemble",
+        "evidence": "Nine-volume map with owned seams; reconciled licence/regulatory registers.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SC2",
+        "title": "Evidence",
+        "evidence": "Primary-record architecture, passed retrieval drill and published ladder alignment.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SC3",
+        "title": "Challenge",
+        "evidence": "Independent cross-volume challenge/red team, with recorded demotions.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SC4",
+        "title": "Assure",
+        "evidence": "Integrated exercise, board page, explicit expiries and wired voiding conditions.",
+        "page": "p. 29"
+      },
+      {
+        "code": "SC5",
+        "title": "Scale",
+        "evidence": "Re-verification per new mission and shell; transfer never assumed.",
+        "page": "p. 29"
+      }
+    ],
+    "exercise": {
+      "scenario": "Synthetic training scenario. A synthetic programme has green component reviews, but its ground release is newer than its security exercise and its savings assume fewer safety staff.",
+      "question": "What should the board decision say?",
+      "options": [
+        {
+          "text": "Assure the entire programme because all component reviews are green.",
+          "correct": false,
+          "feedback": "The configuration mismatch and staffing dependency are cross-volume gaps that the individual grades do not resolve."
+        },
+        {
+          "text": "Limit assurance to evidenced scope, resolve the seams and require an integrated exercise before extension.",
+          "correct": true,
+          "feedback": "The decision honours the weakest relevant evidence and makes conditions, owners and re-submission evidence explicit."
+        },
+        {
+          "text": "Average the component scores to offset the weak security evidence.",
+          "correct": false,
+          "feedback": "Assurance is not an average that lets strong unrelated evidence erase a critical gap."
+        }
+      ]
+    },
+    "deliverable": {
+      "title": "One-page assurance decision",
+      "fields": [
+        "Scope, earned claims and primary evidence",
+        "Cross-volume conflicts, restrictions and unresolved seams",
+        "Decision, owners, expiry and re-assurance triggers"
+      ]
+    },
+    "goldenRules": [
+      "Nine green volumes do not assure one programme.",
+      "The weakest relevant licence limits the claim.",
+      "Safety outranks savings; survival outranks service.",
+      "Challenge must change the register when evidence fails.",
+      "A narrower true assurance claim is stronger than an unsupported broad one."
+    ],
+    "sourcePages": {
+      "briefing": "pp. 2–4",
+      "concepts": "pp. 5–8, 21–22",
+      "gates": "p. 29",
+      "templates": "p. 31",
+      "rules": "p. 32"
+    }
+  }
+]

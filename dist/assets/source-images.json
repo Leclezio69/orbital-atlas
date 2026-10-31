@@ -1,0 +1,242 @@
+[
+  {
+    "file": "capstone-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "capstone-3.webp",
+    "page": 3,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "capstone-7.webp",
+    "page": 7,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "capstone-24.webp",
+    "page": 24,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "constellation-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "constellation-3.webp",
+    "page": 3,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "constellation-13.webp",
+    "page": 13,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "constellation-22.webp",
+    "page": 22,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "debris-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "debris-3.webp",
+    "page": 3,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "debris-9.webp",
+    "page": 9,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "debris-19.webp",
+    "page": 19,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "earth-observation-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "earth-observation-7.webp",
+    "page": 7,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "earth-observation-11.webp",
+    "page": 11,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "earth-observation-25.webp",
+    "page": 25,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "economics-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "economics-3.webp",
+    "page": 3,
+    "width": 1152,
+    "height": 240
+  },
+  {
+    "file": "economics-7.webp",
+    "page": 7,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "economics-24.webp",
+    "page": 24,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "ground-systems-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "ground-systems-3.webp",
+    "page": 3,
+    "width": 1280,
+    "height": 1920
+  },
+  {
+    "file": "ground-systems-6.webp",
+    "page": 6,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "ground-systems-24.webp",
+    "page": 24,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "lunar-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "lunar-3.webp",
+    "page": 3,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "lunar-7.webp",
+    "page": 7,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "lunar-24.webp",
+    "page": 24,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "mission-design-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "mission-design-4.webp",
+    "page": 4,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "mission-design-10.webp",
+    "page": 10,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "mission-design-22.webp",
+    "page": 22,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "security-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "security-3.webp",
+    "page": 3,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "security-5.webp",
+    "page": 5,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "security-24.webp",
+    "page": 24,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "strategy-1.webp",
+    "page": 1,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "strategy-4.webp",
+    "page": 4,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "strategy-20.webp",
+    "page": 20,
+    "width": 1920,
+    "height": 1280
+  },
+  {
+    "file": "strategy-22.webp",
+    "page": 22,
+    "width": 1920,
+    "height": 1280
+  }
+]
